@@ -131,6 +131,9 @@ custom_packages() {
 
     # Download other luci-app-xxx
     # ......
+    # Argon theme
+    wget https://github.com/jerrykuku/luci-theme-argon/releases/download/v2.3/luci-theme-argon_2.3_all.ipk -q -P packages
+    wget https://github.com/jerrykuku/luci-app-argon-config/releases/download/v0.9/luci-app-argon-config_0.9_all.ipk -q -P packages
 
     sync && sleep 3
     echo -e "${INFO} [ packages ] directory status: $(ls packages -l 2>/dev/null)"
@@ -195,10 +198,14 @@ rebuild_firmware() {
         luci-lib-docker luci-lib-ip luci-lib-ipkg luci-lib-jsonc luci-lib-nixio  \
         luci-mod-admin-full luci-mod-network luci-mod-status luci-mod-system  \
         luci-proto-3g luci-proto-bonding luci-proto-ipip luci-proto-ipv6 luci-proto-ncm  \
-        luci-proto-openconnect luci-proto-ppp luci-proto-qmi luci-proto-relay  \
+        luci-proto-openconnect luci-proto-ppp luci-proto-qmi luci-proto-relay luci-proto-wireguard  \
         \
         luci-app-amlogic luci-i18n-amlogic-zh-cn \
         \
+        luci-theme-argon luci-app-argon-config \
+        \
+        luci-app-ddns luci-app-eoip luci-app-nft-qos luci-app-softether luci-app-upnp \
+        luci-app-wireguard luci-app-wol tailscale tailscaled eoip wireguard-tools \
         ${config_list} \
         "
 
