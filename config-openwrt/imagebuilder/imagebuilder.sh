@@ -207,8 +207,8 @@ rebuild_firmware() {
         luci-theme-argon luci-app-argon-config \
         \
         luci-app-ddns luci-app-nft-qos luci-app-upnp \
-        luci-app-wireguard luci-app-wol tailscale tailscaled eoip wireguard-tools \
-        iperf3 python3 openssh-sftp-server\
+        luci-app-wireguard luci-app-wol tailscale tailscaled iptables-nft ip6tables-nft eoip wireguard-tools \
+        iperf3 python3 openssh-sftp-server bind-host vim\
         ${config_list} \
         "
 
