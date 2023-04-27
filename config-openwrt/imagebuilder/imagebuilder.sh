@@ -211,7 +211,7 @@ rebuild_firmware() {
         "
 
     # Rebuild firmware
-    make image PROFILE="Default" PACKAGES="${my_packages}" FILES="files" --strip-abi
+    make image PROFILE="Default" PACKAGES="${my_packages}" FILES="files"
 
     sync && sleep 3
     echo -e "${INFO} [ openwrt/bin/targets/armvirt/64 ] directory status: $(ls bin/targets/*/* -l 2>/dev/null)"
