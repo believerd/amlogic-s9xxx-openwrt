@@ -64,8 +64,10 @@ download_imagebuilder() {
     echo -e "${STEPS} Start downloading OpenWrt files..."
 
     # Downloading imagebuilder files
-    if [[ "${op_sourse}" == "openwrt" ]]; then
+    if [[ "${op_sourse}" == "openwrt" && "${op_branch}" != "SNAPSHOT" ]]; then
         download_file="https://downloads.openwrt.org/releases/${op_branch}/targets/armvirt/64/openwrt-imagebuilder-${op_branch}-armvirt-64.Linux-x86_64.tar.xz"
+    elif [[ "${op_sourse}" == "openwrt" && "${op_branch}" == "SNAPSHOT" ]]; then
+        download_file="https://downloads.openwrt.org/snapshots/targets/armvirt/64/openwrt-imagebuilder-armvirt-64.Linux-x86_64.tar.xz"
     else
         download_file="https://downloads.immortalwrt.org/releases/${op_branch}/targets/armvirt/64/immortalwrt-imagebuilder-${op_branch}-armvirt-64.Linux-x86_64.tar.xz"
     fi
